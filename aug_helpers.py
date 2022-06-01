@@ -1,6 +1,5 @@
 import librosa
 import numpy as np
-import pandas as pd
 
 
 def get_augment_range_by_coverage(data, zone, coverage):

@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-import custom_augmenter as aug
+import aug_helpers as aug
 
 
 class VtlpAug:

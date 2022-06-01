@@ -1,7 +1,7 @@
 # from nlpaug.augmenter.audio import VtlpAug
 import librosa
 import soundfile
-from custom_vtlp import VtlpAug
+from vtlp import VtlpAug
 
 data, samplerate = librosa.load("../fn000490.wav")
 
