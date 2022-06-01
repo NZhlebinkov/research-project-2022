@@ -1,5 +1,4 @@
 import sys
-import pandas as pd
 import aug_helpers as aug
 
 
@@ -50,11 +49,6 @@ class VtlpAug:
             sys.stdout("Length of data is 0")
             sys.exit(1)
 
-        augmented_results = self._substitute(data)
-
-        return augmented_results
-
-    def _substitute(self, data):
         start_pos, end_pos = aug.get_augment_range_by_coverage(
             data, self.zone, self.coverage
         )
@@ -62,10 +56,13 @@ class VtlpAug:
         warp_factor = aug.get_random_factor(self.factor_range[0], self.factor_range[1])
         print(warp_factor)
 
-        return aug.manipulate(
-            data,
-            start_pos=start_pos,
-            end_pos=end_pos,
-            sampling_rate=self.sampling_rate,
-            warp_factor=warp_factor,
+        return (
+            aug.manipulate(
+                data,
+                start_pos=start_pos,
+                end_pos=end_pos,
+                sampling_rate=self.sampling_rate,
+                warp_factor=warp_factor,
+            ),
+            warp_factor,
         )
