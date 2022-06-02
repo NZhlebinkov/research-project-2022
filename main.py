@@ -1,10 +1,18 @@
+import os
 import librosa
 import soundfile
 from vtlp import VtlpAug
 
-data, samplerate = librosa.load("../fn000490.wav")
+fileNames = open("../wavSource")
 
-aug = VtlpAug(samplerate, factor_range=(0.9, 1.1), zone=(0, 1), coverage=1)
-augmented, warp_factor = aug.augment(data)
-soundfile.write("../fn000490_localAug.wav", augmented, samplerate)
-print("This is warp: " + str(warp_factor))
+for fileName in fileNames:
+    fileName = str.strip(fileName)
+    filePath = "../" + fileName
+    data, samplerate = librosa.load(filePath)
+
+    aug = VtlpAug(samplerate, factor_range=(0.9, 1.1), zone=(0, 1), coverage=1)
+    augmented, warp_factor = aug.augment(data)
+
+    outputPath = "../augmented/" + fileName
+    soundfile.write(outputPath, augmented, samplerate)
+    print("This is warp: " + str(warp_factor))

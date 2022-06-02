@@ -54,7 +54,6 @@ class VtlpAug:
         )
 
         warp_factor = aug.get_random_factor(self.factor_range[0], self.factor_range[1])
-        print(warp_factor)
 
         return (
             aug.manipulate(
