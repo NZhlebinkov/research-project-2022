@@ -28,6 +28,7 @@ for fileName in onlyFiles:
 print("Finalized warps, creating wav2warp")
 wav2warpArray = [spk + " " + str(warp) for spk, warp in warpFactors.items()]
 print(wav2warpArray)
-wav2warp = "\n".join(wav2warpArray)
-print(wav2warp)
-# fileNames = open("../warps")
+wav2warpContent = "\n".join(wav2warpArray)
+wav2warpFile = open(join(outputDir, "wav2warp"), "w")
+wav2warpFile.write(wav2warpContent)
+wav2warpFile.close()
