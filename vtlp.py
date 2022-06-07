@@ -3,20 +3,6 @@ import aug_helpers as aug
 
 
 class VtlpAug:
-    # CONSTANTS
-    name = "Vtlp_Aug"
-    # action=Action.SUBSTITUTE,
-    # method=Method.AUDIO,
-    device = "cpu"
-    aug_p = 0.1
-    include_detail = False
-    verbose = 0
-    stateless = True
-    aug_min = None
-    aug_max = None
-    parent_change_seq = 0
-    duration = None
-
     def __init__(
         self,
         sampling_rate,
