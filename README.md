@@ -8,3 +8,6 @@ The title of the paper associated with this repo is "Improving Northern Regional
 
 - In `customVTLP` is the script to execute VTLP on a set of speech recordings.
 - `wav2warp` is the set of warp factors used to get the results seen in my paper
+- In `extraction` are bash scripts for extracting region specific speaker info from the Speechlab\RP2022 folder
+  - The two bash scripts need to _stay together_, since one depends on the other
+  - A standardized folder structure was used for the asr data. If your data is stored in a different place, the fields `ORIGDATA` and `LOCALDATA` would need to be changed.
