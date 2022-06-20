@@ -7,9 +7,9 @@ from os.path import isfile, join
 
 # Change these paths to signify:
 # in which folder your original speech recordings are
-sourceDir = "../../corpus-data/wavs/t/"
+sourceDir = "../../../corpus-data/wavs/t/"
 # and in which folder the augmented speech recordings should be placed
-outputDir = "../augmented/t/"
+outputDir = "../../augmented/t/"
 
 try:
     onlyFiles = [f for f in listdir(sourceDir) if isfile(join(sourceDir, f))]
