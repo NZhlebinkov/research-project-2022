@@ -5,7 +5,10 @@ from vtlp import VtlpAug
 from os import listdir
 from os.path import isfile, join
 
+# Change these paths to signify:
+# in which folder your original speech recordings are
 sourceDir = "../../corpus-data/wavs/t/"
+# and in which folder the augmented speech recordings should be placed
 outputDir = "../augmented/t/"
 
 try:
@@ -33,7 +36,7 @@ try:
         print(outputName + " warped by " + str(warpFactor))
 
     print("Finalized warps, creating wav2warp")
-    wav2warpArray = [spk + " " + str(warp) for spk, warp in warpFactors.items()]
+    wav2warpArray = [wavName + " " + str(warp) for wavName, warp in warpFactors.items()]
     wav2warpContent = "\n".join(wav2warpArray)
     wav2warpFile = open(join(outputDir, "wav2warp"), "w")
     wav2warpFile.write(wav2warpContent)
